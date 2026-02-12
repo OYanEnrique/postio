@@ -131,6 +131,11 @@ export const TaskCard: React.FC<TaskCardProps> = ({
                             {formatDate(task.createdAt)}
                         </span>
                     )}
+                    {task.completed && task.completedAt && (
+                        <span className={`flex items-center gap-1 ${isDarkBg ? 'text-white/70' : 'text-green-600/80'}`}>
+                            ✓ {formatDate(task.completedAt)}
+                        </span>
+                    )}
                 </div>
              </div>
 
