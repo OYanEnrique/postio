@@ -41,27 +41,29 @@
       body {
         background-color: #f3f5f0;
         color: #191c1b;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
       }
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
+      #root {
+        height: 100vh;
+        width: 100vw;
       }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
   <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
     "react": "https://esm.sh/react@^19.2.4",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "vite": "https://esm.sh/vite@^7.3.1",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4",
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
     "@dnd-kit/sortable": "https://esm.sh/@dnd-kit/sortable@^10.0.0",
     "@dnd-kit/utilities": "https://esm.sh/@dnd-kit/utilities@^3.2.2",
-    "@dnd-kit/core": "https://esm.sh/@dnd-kit/core@^6.3.1"
+    "@dnd-kit/core": "https://esm.sh/@dnd-kit/core@^6.3.1",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.4"
   }
 }
 </script>
@@ -69,7 +71,8 @@
 </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <!-- O segredo está aqui: removida a "/" para funcionar no GitHub Pages -->
+    <script type="module" src="index.tsx"></script>
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>
