@@ -37,7 +37,17 @@ function App() {
     const savedTasks = localStorage.getItem('kanban-tasks');
     if (savedTasks) {
       try {
-        return JSON.parse(savedTasks);
+        const parsed = JSON.parse(savedTasks);
+        // Migração: adicionar completedAt para tarefas já concluídas
+        return parsed.map((task: Task) => {
+          if (task.completed && !task.completedAt) {
+            return {
+              ...task,
+              completedAt: task.createdAt // Usar data de criação como fallback
+            };
+          }
+          return task;
+        });
       } catch (e) {
         console.error("Error parsing local storage", e);
       }
@@ -105,11 +115,13 @@ function App() {
     setTasks(tasks.map(t => {
       if (t.id === id) {
         const isNowCompleted = !t.completed;
-        return { 
+        const updatedTask = { 
           ...t, 
           completed: isNowCompleted,
           completedAt: isNowCompleted ? new Date().toISOString() : undefined 
         };
+        console.log('Task updated:', updatedTask);
+        return updatedTask;
       }
       return t;
     }));

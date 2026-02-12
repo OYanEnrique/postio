@@ -128,12 +128,12 @@ export const TaskCard: React.FC<TaskCardProps> = ({
                 <div className={`flex flex-wrap gap-x-3 gap-y-1 mt-3 text-[10px] uppercase font-bold tracking-wider ${metaTextColor}`}>
                     {task.createdAt && (
                         <span className="flex items-center gap-1">
-                            {formatDate(task.createdAt)}
+                            📅 {formatDate(task.createdAt)}
                         </span>
                     )}
                     {task.completed && task.completedAt && (
-                        <span className={`flex items-center gap-1 ${isDarkBg ? 'text-white/70' : 'text-green-600/80'}`}>
-                            ✓ {formatDate(task.completedAt)}
+                        <span className={`flex items-center gap-1 ${isDarkBg ? 'text-white/90' : 'text-green-600'} font-extrabold`}>
+                            ✅ {formatDate(task.completedAt)}
                         </span>
                     )}
                 </div>
