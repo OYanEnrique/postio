@@ -1,0 +1,5 @@
+{
+  "name": "Postio",
+  "description": "A minimalist, Material Design 3 inspired Kanban board with drag-and-drop functionality, color coding, and local storage persistence.",
+  "requestFramePermissions": []
+}
