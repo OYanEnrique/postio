@@ -5,37 +5,28 @@ import { Column, Task } from './types';
 
 export const APP_DATA: { columns: Column[]; tasks: Task[] } = {
   "columns": [
-    {
-      "id": "todo",
-      "title": "To Do"
-    },
-    {
-      "id": "in-progress",
-      "title": "In Progress"
-    },
-    {
-      "id": "done",
-      "title": "Done"
-    }
-  ],
+  {
+    "id": "todo",
+    "title": "To Do"
+  },
+  {
+    "id": "in-progress",
+    "title": "In Progress"
+  },
+  {
+    "id": "done",
+    "title": "Done"
+  }
+],
   "tasks": [
-    {
-      "id": "1",
-      "columnId": "todo",
-      "title": "Welcome to Postio!",
-      "description": "Your minimalist, Material Design 3 kanban board.",
-      "color": "bg-[#539190] text-white border-transparent",
-      "completed": false,
-      "createdAt": new Date().toISOString()
-    },
-    {
-      "id": "2",
-      "columnId": "in-progress",
-      "title": "Data Persistence",
-      "description": "Changes are saved automatically to your browser's local storage.",
-      "color": "bg-[#83ecbb] border-[#539190]/20",
-      "completed": false,
-      "createdAt": new Date().toISOString()
-    }
-  ]
+  {
+    "id": "1770922500429",
+    "columnId": "in-progress",
+    "title": "Curso \"Flutter: utilize animações da biblioteca Animations\"",
+    "description": "Curso da Alura realizado durante o BootCamp Santander de desenvolvimento mobile 2025",
+    "color": "bg-[#539190] text-white border-transparent",
+    "completed": false,
+    "createdAt": "2026-02-12T18:55:00.429Z"
+  }
+]
 };
